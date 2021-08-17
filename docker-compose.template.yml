@@ -1,0 +1,35 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  api:
+    build: .
+    volumes:
+        - ./src:/usr/src/app/src
+        - ./nodemon.json:/usr/src/app/nodemon.json
+    ports:
+      - "3000:3000"
+    #   - "9229:9229"
+    links:
+      - db
+    depends_on:
+      - "db"
+    environment:
+        JWT_SECRET: 'secret'
+        PORT: 80
+        DB_SERVICE_NAME: 'db' # or mongodb-service.cmdsoftware on AWS
+        FRONTEND_HOSTNAME: 'http://localhost:3000' # https://cmdsoftware.io on AWS
+        # AWS_ACCESS_KEY_ID: '' 
+        # AWS_SECRET_ACCESS_KEY: ''
+        # PORT: 80
+        # FRONTEND_HOSTNAME: 'https://localhost:3000'
+    # command: # if you want to debugger with breakpoints and whatnot
+    #   - node
+    #   - "--inspect-brk=0.0.0.0"
+    #   - "." 
+  db:
+    ports:
+      - "27017:27017"
+    image: mongo
+    volumes:
+        - ./backup_proddb:/data/db
+volumes:
+  mongodbdata: {}
