@@ -29,6 +29,11 @@ var STATIC_CHANNELS = [
     email: "cohana@gmail.com",
     skills: ["Java"],
   },
+  {
+    name: "Tad",
+    email: "thadduval.lavud@gmail.com",
+    skills: ["AWS", "Full Stack", "Business Development", "Mobile Development", "Blockchain"],
+  },
 ];
 
 module.exports = async function (req, res, next) {
