@@ -8,7 +8,7 @@ const cors = require("cors");
 const pkg = require("../package.json");
 
 var corsOptions = {
-  origin: process.env.FRONTEND_HOSTNAME,
+  origin: process.env.FRONTEND_DOMAIN,
   credentials: true,
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
@@ -22,7 +22,6 @@ app.use(morgan("combined"));
 app.use(express.json());
 app.use(cookieParser());
 
-app.use('/data-api/public', express.static(__dirname + '/public'));
 
 app.get("/data-api", (req, res) => {
   res.send("OK");
@@ -34,6 +33,8 @@ app.get("/data-api/version", (req, res) => {
 
 // app.use('/tanks', authenticateToken, tanks)
 app.use("/data-api", data);
+
+app.use('/data-api/public', express.static(__dirname + '/public'));
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);

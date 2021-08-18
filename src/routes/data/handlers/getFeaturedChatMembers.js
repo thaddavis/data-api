@@ -10,9 +10,24 @@ var STATIC_CHANNELS = [
     skills: ["Data Science", "Python"],
   },
   {
+    name: "Hyder",
+    email: "hzubairi0277@gmail.com",
+    skills: ["Contracts"],
+  },
+  {
     name: "Sayid",
     email: "thenextj.j.e@gmail.com",
     skills: ["Javascript", "Java", "Blockchain", "React"],
+  },
+  {
+    name: "Keysel",
+    email: "withthefritz@gmail.com",
+    skills: ["Contracts"],
+  },
+  {
+    name: "Charlie",
+    email: "cohana@gmail.com",
+    skills: ["Java"],
   },
 ];
 

@@ -13,14 +13,10 @@ services:
     depends_on:
       - "db"
     environment:
-        JWT_SECRET: 'secret'
+        AWS_ACCESS_KEY_ID: '' 
+        AWS_SECRET_ACCESS_KEY: ''
         PORT: 80
-        DB_SERVICE_NAME: 'db' # or mongodb-service.cmdsoftware on AWS
-        FRONTEND_HOSTNAME: 'http://localhost:3000' # https://cmdsoftware.io on AWS
-        # AWS_ACCESS_KEY_ID: '' 
-        # AWS_SECRET_ACCESS_KEY: ''
-        # PORT: 80
-        # FRONTEND_HOSTNAME: 'https://localhost:3000'
+        FRONTEND_HOSTNAME: 'https://localhost:3000'
     # command: # if you want to debugger with breakpoints and whatnot
     #   - node
     #   - "--inspect-brk=0.0.0.0"
