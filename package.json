@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "start": "node src/index.js",
-    "start-local": "FRONTEND_DOMAIN=http://localhost:3000 PORT=5000 JWT_SECRET=secret node src/index.js",
-    "dev": "FRONTEND_DOMAIN=http://localhost:3000 nodemon src/index.js"
+    "start-local": "FRONTEND_HOSTNAME=http://localhost:3000 PORT=5000 JWT_SECRET=secret node src/index.js",
+    "dev": "FRONTEND_HOSTNAME=http://localhost:3000 nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
