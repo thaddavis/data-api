@@ -22,6 +22,8 @@ app.use(morgan("combined"));
 app.use(express.json());
 app.use(cookieParser());
 
+app.use('/data-api/public', express.static(__dirname + '/public'));
+
 app.get("/data-api", (req, res) => {
   res.send("OK");
 });
